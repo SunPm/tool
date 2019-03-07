@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color conversion</title>
+</head>
+<style>
+    .hexadecimal > input{
+    width: 58px;
+    height: 30px;
+  }
+  .decimalism{
+    margin-top: 20px;
+  }
+  .decimalism > input{
+    width: 90px;
+    height: 30px;
+  }
+  p{
+    font-size: 30px;
+  }
+</style>
+
+<body>
+    <div id="app">
+        <div class="hexadecimal">
+            <input type="text" v-model="hexadecimalOne">
+            <input type="text" v-model="hexadecimalTwo">
+            <input type="text" v-model="hexadecimalThree">
+            <input type="button" value="转换" @click="toDecimalism()">
+        </div>
+        <div class="decimalism">
+            <input type="text" v-model="decimalism">
+            <input type="button" value="转换" @click="toHexadecimal()">
+        </div>
+        <p>
+            {{content}}
+        </p>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.6.6/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: function() {
+            return {
+                content: '',
+                hexadecimalOne: '',
+                hexadecimalTwo: '',
+                hexadecimalThree: '',
+                decimalism: '',
+            }
+        },
+        methods: {
+            toDecimalism: function() {
+                // let _hexadecimalOne = this.hexadecimalOne;
+                // let _hexadecimalTwo = this.hexadecimalTwo;
+                // let _hexadecimalThree = this.hexadecimalThree;
+                // function ParseInt(txt) {
+                //   if(parseInt(txt,16)){
+
+                //   }
+                // }
+                // this.content = `#${parseInt(this.hexadecimalOne,16)}${parseInt(this.hexadecimalTwo,16)}${parseInt(this.hexadecimalThree,16)}`
+                this.content = `#${parseInt(this.hexadecimalOne,16)}${parseInt(this.hexadecimalTwo,16)}${parseInt(this.hexadecimalThree,16)}`
+            }
+        },
+    })
+</script>
+
+</html>
